@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Merci - Les Créations De Sheyenne</title>
+  <style>
+    :root {
+      --couleur-primaire: #6b3e1a;
+      --couleur-secondaire: #c9a66b;
+      --background: #f9f6f1;
+      --texte-primaire: #3b2f2f;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--background);
+      color: var(--texte-primaire);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      animation: bounce 1.5s ease;
+      color: var(--couleur-primaire);
+    }
+
+    p {
+      font-size: 1.25rem;
+      max-width: 450px;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      background-color: var(--couleur-primaire);
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    a:hover {
+      background-color: var(--couleur-secondaire);
+      transform: scale(1.05);
+      color: var(--couleur-primaire);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+        margin: 0 1rem 1.5rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Merci pour votre commande ! 🎉</h1>
+  <p>Votre commande a bien été enregistrée. Nous vous contacterons prochainement pour confirmer et planifier la livraison.</p>
+  <a href="page1.html">Retour au menu</a>
+</body>
+</html>
