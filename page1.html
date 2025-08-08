@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Créations De Sheyenne - Gravure Laser</title>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+  :root {
+    --couleur-primaire: #6B4226; /* Marron artisanal */
+    --couleur-secondaire: #C89F77; /* Beige doré */
+    --couleur-fond: #F5E6D3; /* Beige clair */
+    --texte-primaire: #3b2a1a;
+    --texte-secondaire: #5c4a3a;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--couleur-fond);
+    color: var(--texte-primaire);
+    line-height: 1.6;
+  }
+
+  header {
+    background: var(--couleur-primaire);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  nav {
+    background: var(--couleur-secondaire);
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--couleur-primaire);
+    font-weight: bold;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  nav a:hover {
+    transform: scale(1.05);
+    color: #8B5E3C;
+  }
+
+  main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem;
+  }
+
+  .intro {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .intro h2 {
+    color: var(--couleur-primaire);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .intro p {
+    max-width: 700px;
+    margin: auto;
+    color: var(--texte-secondaire);
+    font-size: 1.1rem;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+
+  footer {
+    background: var(--couleur-primaire);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+  }
+
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    animation: zoomIn 0.3s ease;
+  }
+
+  @keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Les Créations De Sheyenne</h1>
+</header>
+
+<nav>
+  <a href="#accueil">Accueil</a>
+  <a href="#galerie">Galerie</a>
+  <a href="#services">Services</a>
+  <a href="page2.html">Commandez</a>
+</nav>
+
+<main>
+  <section id="accueil" class="intro">
+    <h2>Bienvenue dans notre univers artisanal</h2>
+    <p>
+      Spécialistes en gravure laser sur bois, cuir, métal et bien plus encore, nous créons avec passion des pièces uniques
+      pour embellir votre quotidien ou offrir un cadeau inoubliable.
+    </p>
+  </section>
+
+  <section id="galerie">
+    <h2 style="text-align:center; color: var(--couleur-primaire); margin-bottom:1rem;">Nos réalisations</h2>
+    <div class="gallery">
+      <img src="images/1754595074128.jpg" alt="Gravure bois" />
+      <img src="images/1754595074099.jpg" alt="Gravure cuir" />
+      <img src="images/512671364_122129705750835656_718347489372462624_n.jpg" alt="Gravure métal" />
+      <img src="images/508174254_122127688454835656_2990410991744367054_n.jpg" alt="Gravure personnalisée" />
+      <img src="images/490348967_122104919228835656_3867305092025833930_n.jpg" alt="Gravure personnalisée" />
+      <img src="images/487236457_122104919942835656_5410204626710908047_n.jpg" alt="Gravure personnalisée" />
+    </div>
+  </section>
+
+  <section id="services" style="margin-top: 3rem; text-align: center;">
+    <h2 style="color: var(--couleur-primaire);">Nos Services</h2>
+    <p style="max-width: 700px; margin: 0 auto; color: var(--texte-secondaire); font-size: 1.1rem;">
+      Gravures laser précises et sur mesure : cadeaux personnalisés, objets décoratifs, signalétiques, et bien plus.
+      Nous travaillons chaque commande avec soin pour un rendu unique.
+    </p>
+  </section>
+
+  <section id="contact" style="margin-top: 3rem; text-align: center;">
+    <h2 style="color: var(--couleur-primaire);">Contactez-nous</h2>
+    <p>Pour toute demande :</p>
+    <p><a href="mailto:contact@creationsdesheyenne.com" style="color: var(--couleur-primaire); font-weight: bold; text-decoration: none;">contact@creationsdesheyenne.com</a></p>
+    <p>Téléphone : 06 12 34 56 78</p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Les Créations De Sheyenne - Tous droits réservés
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <img src="" alt="Agrandissement">
+</div>
+
+<script>
+  const images = document.querySelectorAll('.gallery img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>
