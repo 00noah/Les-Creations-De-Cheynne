@@ -190,28 +190,26 @@
     <div class="total" id="total">Total : 0 €</div>
   </div>
 
-  <form id="commandeForm" action="https://formsubmit.co/lescreationdecheyene@outlook.fr" method="POST">
-    <h2>Informations de livraison</h2>
+  <form id="commandeForm" action="https://formsubmit.co/el/fokenu" method="POST">
+  <h2>Informations de livraison</h2>
 
-    <input type="hidden" name="_subject" value="Nouvelle commande gravure laser">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="page3.html">
-    <input type="hidden" id="panierHidden" name="Détails_du_panier" value="">
+  <input type="hidden" name="_subject" value="Nouvelle commande gravure laser">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="page3.html">
+  <input type="hidden" id="panierHidden" name="Détails_du_panier" value="">
 
-    <label for="nom">Nom :</label>
-    <input type="text" id="nom" name="Nom" required>
+  <label for="nom">Nom :</label>
+  <input type="text" id="nom" name="Nom" required>
 
-    <label for="email">Email :</label>
-    <input type="email" id="email" name="Email" required>
+  <label for="email">Email :</label>
+  <input type="email" id="email" name="Email" required>
 
-    <label for="adresse">Adresse de livraison :</label>
-    <textarea id="adresse" name="Adresse" required></textarea>
+  <label for="adresse">Adresse de livraison :</label>
+  <textarea id="adresse" name="Adresse" required></textarea>
 
-    <input type="submit" value="Envoyer la commande">
-  </form>
-
-</div>
+  <input type="submit" value="Envoyer la commande">
+</form>
 
 <script>
   const panier = [];
@@ -270,8 +268,14 @@
     quantiteInput.value = 1;
     messageInput.value = "";
   });
+
+  // ✅ Met à jour le panier avant l'envoi du formulaire
+  document.getElementById("commandeForm").addEventListener("submit", function() {
+    updatePanier();
+  });
 </script>
 
 </body>
 </html>
+
 
