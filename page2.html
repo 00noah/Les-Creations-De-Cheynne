@@ -191,25 +191,28 @@
   </div>
 
   <form id="commandeForm" action="https://formsubmit.co/el/fokenu" method="POST">
-  <h2>Informations de livraison</h2>
+    <h2>Informations de livraison</h2>
 
-  <input type="hidden" name="_subject" value="Nouvelle commande gravure laser">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="page3.html">
-  <input type="hidden" id="panierHidden" name="Détails_du_panier" value="">
+    <!-- Champs cachés -->
+    <input type="hidden" name="_subject" value="Nouvelle commande gravure laser">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="page3.html">
+    <input type="hidden" id="panierHidden" name="Details_du_panier" value="">
 
-  <label for="nom">Nom :</label>
-  <input type="text" id="nom" name="Nom" required>
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="Nom" required>
 
-  <label for="email">Email :</label>
-  <input type="email" id="email" name="Email" required>
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="Email" required>
 
-  <label for="adresse">Adresse de livraison :</label>
-  <textarea id="adresse" name="Adresse" required></textarea>
+    <label for="adresse">Adresse de livraison :</label>
+    <textarea id="adresse" name="Adresse" required></textarea>
 
-  <input type="submit" value="Envoyer la commande">
-</form>
+    <input type="submit" value="Envoyer la commande">
+  </form>
+
+</div>
 
 <script>
   const panier = [];
@@ -226,13 +229,14 @@
       div.classList.add("item");
       div.innerHTML = `
         <span>${item.produit} x${item.quantite} - ${item.total.toFixed(2)}€<br><em>${item.message || ''}</em></span>
-        <button class="remove" onclick="removeItem(${index})" aria-label="Supprimer ${item.produit}">Supprimer</button>
+        <button class="remove" onclick="removeItem(${index})">Supprimer</button>
       `;
       listePanier.appendChild(div);
       total += item.total;
     });
 
     totalEl.textContent = `Total : ${total.toFixed(2)} €`;
+
     panierHidden.value = panier.map(p =>
       `${p.produit} x${p.quantite} - ${p.total.toFixed(2)}€ | ${p.message || 'Aucune personnalisation'}`
     ).join("\n");
@@ -269,7 +273,6 @@
     messageInput.value = "";
   });
 
-  // ✅ Met à jour le panier avant l'envoi du formulaire
   document.getElementById("commandeForm").addEventListener("submit", function() {
     updatePanier();
   });
@@ -277,5 +280,7 @@
 
 </body>
 </html>
+
+
 
 
